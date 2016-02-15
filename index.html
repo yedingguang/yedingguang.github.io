@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-android_studio的搭建" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/15/hello-world/" class="article-date">
-  <time datetime="2016-02-15T06:30:54.000Z" itemprop="datePublished">2016-02-15</time>
+    <a href="/2016/02/15/android_studio的搭建/" class="article-date">
+  <time datetime="2016-02-15T06:06:35.000Z" itemprop="datePublished">2016-02-15</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/hello-world/">Hello World</a>
+      <a class="article-title" href="/2016/02/15/android_studio的搭建/">Linux 搭建android studio</a>
     </h1>
   
 
@@ -83,20 +83,406 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="android-studio-简介"><a href="#android-studio-简介" class="headerlink" title="android studio 简介"></a><strong>android studio 简介</strong></h2><p>Android Studio 是一个Android开发环境，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。</p>
+<h2 id="下载-sdk和-idea"><a href="#下载-sdk和-idea" class="headerlink" title=" 下载 sdk和 idea"></a><strong> 下载 sdk和 idea</strong></h2><p><a href="http://www.android-studio.org/" target="_blank" rel="external">下载sdk,idea地址</a>，下好后直接解压。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android studio首次安装运行时，要检查更新要等好长的时间如果想跳过这一步，可以进行如下操作：在Android Studio安装目录下的 bin 目录下，找到 idea.properties 文件，在文件最后追加disable.android.first.run=<span class="literal">true</span> 。</span><br></pre></td></tr></table></figure>
+<h2 id="下载-jdk-和-配置jdk"><a href="#下载-jdk-和-配置jdk" class="headerlink" title="下载 jdk 和 配置jdk"></a>下载 jdk 和 配置jdk</h2><p>在安装之前，系统没有任何jdk软件，也就是说在终端执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<p>将会输出如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@haiyang-Aspire:~<span class="comment"># java -version</span></span><br><span class="line">    程序 <span class="string">'java'</span> 已包含在下列软件包中：</span><br><span class="line">     * default-jre</span><br><span class="line">     * gcj-<span class="number">4.6</span>-jre-headless</span><br><span class="line">     * openjdk-<span class="number">6</span>-jre-headless</span><br><span class="line">     * gcj-<span class="number">4.5</span>-jre-headless</span><br><span class="line">     * openjdk-<span class="number">7</span>-jre-headless</span><br><span class="line">    请尝试：apt-get install &lt;选定的软件包&gt;</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" target="_blank" rel="external">下载jdk地址</a>，下好后直接解压。</p>
+<p>进入在存放jdk文件夹的当前目录，将解压好的jdk1.7.0_10文件夹用最高权限复移动到/usr/lib/jvm目录里，此时即使没有jvm目录也可以执行如下命令，jvm文件夹将得到创建。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv jdk1.<span class="number">7.0</span>_10 /usr/lib/jvm/</span><br></pre></td></tr></table></figure></p>
+<p>接下来需要设置环境变量，进入当前用户名的主文件夹，修改.profile文件。注意，该文件是当前用户的配置文件，如果要对使用计算机的所有用户生效，那么需要设置的文件应该是 /etc/profile。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~/.profile</span><br></pre></td></tr></table></figure></p>
+<p>在末尾加上:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/jdk1.<span class="number">7.0</span>_10</span><br><span class="line"><span class="built_in">export</span> JRE_HOME=/usr/lib/jvm/jdk1.<span class="number">7.0</span>_10/jre</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JRE_HOME</span>/lib:<span class="variable">$CLASSPATH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
+<p>然后保存关闭，此时在命令行输入java -version将会仍然显示java没有安装。此时，需要使用source更新下.profile文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.profile</span><br><span class="line">再次使用java -version命令可以看到如下输出：</span><br><span class="line">haiyang@haiyang-ubuntu:~$ java -version</span><br><span class="line">java version <span class="string">"1.7.0_10"</span></span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.7</span>.<span class="number">0</span>_10-b18)</span><br><span class="line">Java HotSpot(TM) <span class="number">64</span>-Bit Server VM (build <span class="number">23.6</span>-b04, mixed mode)</span><br></pre></td></tr></table></figure>
+<p>到此，已经将oracle jdk配置完成。如果之前系统里面已经安装了openjdk，可以使用如下方法将默认jdk更改过来：</p>
+<p>将系统默认的jdk修改过来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.<span class="number">7.0</span>_10/bin/java <span class="number">300</span></span><br></pre></td></tr></table></figure>
+<p>输入sun jdk前的数字就好了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.<span class="number">7.0</span>_10/bin/javac <span class="number">300</span></span><br><span class="line"></span><br><span class="line">$ sudo update-alternatives --config java</span><br><span class="line">$ sudo update-alternatives --config javac</span><br></pre></td></tr></table></figure></p>
+<p>步骤 configure -&gt; progectDefaults -&gt; project struture   </p>
+<p>注意 ： 如果sdk,idea 下载不了就使用vpn链接<br><a href="http://blog.chinaunix.net/uid-26404477-id-3471246.html" target="_blank" rel="external">jdk配置</a>  <a href="http://www.feiyuvpn.cn/page/testvpn.html" target="_blank" rel="external">飞鱼翻墙地址</a> <a href="https://moyuv5.com/index.php?a=register" target="_blank" rel="external">摸鱼翻墙地址</a> <a href="https://secure.wormholelab.com/clientarea.php" target="_blank" rel="external">WORMHOLE翻墙地址</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/15/hello-world/" data-id="ciknooswl00003za3h3mz3tb3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/15/android_studio的搭建/" data-id="ciknorric000055a3xbkajxlj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-移动开发平台（分享）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/15/移动开发平台（分享）/" class="article-date">
+  <time datetime="2016-02-15T06:06:35.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/移动开发平台（分享）/">移动开发者服务平台</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 移动开发者服务平台的地址：<a href="http://mob.com/#/index" target="_blank" rel="external">http://mob.com/#/index</a></p>
+<h1 id="Ubuntu下"><a href="#Ubuntu下" class="headerlink" title="Ubuntu下"></a>Ubuntu下</h1><ol>
+<li>注册一个账号 </li>
+<li>点击网页的 “立即下载ShareSDk” </li>
+<li>选中 “android的图标”, 在”头部的标题栏中点击sdk下载” 选中 “ShareSDK For Android “</li>
+<li>点击 “SDK 下载” 选择要分享的软件</li>
+<li>进入ShareSDK解压目录，打开“Share SDK for Android”目录，可以找到“QuickIntegrater.jar”，这个就是快速集成ShareSDK的工具</li>
+<li><p>启动终端 cd进入“Share SDK for Android”目录，输入： java -jar QuickIntegrater.jar –&gt;&gt; <a href="http://wiki.mob.com/Android_%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E6%8C%87%E5%8D%97/" target="_blank" rel="external">文档地址</a></p>
+</li>
+<li><p>进入ShareSDK解压目录，打开“Share SDK for Android”目录，可以找到“Sample 文件夹” 直接用Android studio 打开</p>
+</li>
+<li><ul>
+<li>将需要的库拷贝带 lib文件夹</li>
+<li>assets文件夹拷贝到 main文件夹 </li>
+<li>onekeyshare文件拷贝到 java 文件夹（与activity文件夹同级目录）</li>
+<li>drawable文件夹拷贝到 res文件夹</li>
+<li>在配置文件中（AndroidManifest.xml）–&gt;&gt; <a href="http://wiki.mob.com/Android_%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E6%8C%87%E5%8D%97/" target="_blank" rel="external">文档地址</a></li>
+<li>assets文件   —&gt;&gt;&gt;  ShareSDK AppKey = “b21d3e800242”  我的头像进入后台 –&gt; 创建应用  <a href="http://dashboard.mob.com/ShareSDK/#/" target="_blank" rel="external">地址</a></li>
+</ul>
+</li>
+</ol>
+<p>各个平台注册应用信息的地址如下：</p>
+<p> 新浪微博        <a href="http://open.weibo.com" target="_blank" rel="external">http://open.weibo.com</a><br> 腾讯微博        <a href="http://dev.t.qq.com" target="_blank" rel="external">http://dev.t.qq.com</a><br> QQ空间          <a href="http://connect.qq.com/intro/login/" target="_blank" rel="external">hhttp://connect.qq.com/intro/login/</a><br> 微信好友        <a href="http://open.weixin.qq.com" target="_blank" rel="external">http://open.weixin.qq.com</a><br> 人人网          <a href="http://dev.renren.com" target="_blank" rel="external">http://dev.renren.com</a><br> 开心网         <a href="http://open.kaixin001.com" target="_blank" rel="external">http://open.kaixin001.com</a><br> 搜狐微博       <a href="http://open.t.sohu.com" target="_blank" rel="external">http://open.t.sohu.com</a><br> 网易微博       <a href="http://open.t.163.com" target="_blank" rel="external"> http://open.t.163.com</a><br> 豆瓣          <a href="http://developers.douban.com" target="_blank" rel="external">http://developers.douban.com</a><br> 有道云笔记    <a href="http://note.youdao.com/open/developguide.html#app" target="_blank" rel="external">http://note.youdao.com/open/developguide.html#app</a><br> 印象笔记      <a href="https://dev.evernote.com/" target="_blank" rel="external">https://dev.evernote.com/</a><br> 易信好友      <a href="http://open.yixin.im/" target="_blank" rel="external"> http://open.yixin.im/</a><br> 明道          <a href="http://open.mingdao.com/" target="_blank" rel="external">http://open.mingdao.com/</a><br> Line         <a href="http://media.line.me/zh-hant/" target="_blank" rel="external">http://media.line.me/zh-hant/</a><br> Pocket        <a href="http://getpocket.com/developer/apps/new" target="_blank" rel="external">http://getpocket.com/developer/apps/new</a>  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/15/移动开发平台（分享）/" data-id="ciknorril000155a3e65kg03i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo的创建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/15/hexo的创建/" class="article-date">
+  <time datetime="2016-02-15T06:06:35.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/hexo的创建/">hexo搭建博客，并部署到 gitcafe</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a><strong>目录</strong></h1><ul>
+<li>hexo简介</li>
+<li>hexo安装方法</li>
+<li>hexo配置方法</li>
+<li>hexo部署方法</li>
+<li>hexo更换主题</li>
+</ul>
+<h1 id="hexo简介"><a href="#hexo简介" class="headerlink" title="hexo简介"></a><strong>hexo简介</strong></h1><p>Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架。<br>hexo相比其他的静态网页生成器而言，生成静态网页最快，插件丰富等优点（已经移植了大量Octopress插件）。hexo同其他很多轻量级博客如jekyll、octopress、jekyllbootstrap等一样，也是使用Markdown语法进行编辑博文。关于Markdown不用怕，推荐搜索维基上面的语法示例，有中文版本<a href="http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">http://zh.wikipedia.org/wiki/Markdown</a><br>Hexo的官方网站：<a href="http://hexo.io" target="_blank" rel="external">http://hexo.io/</a></p>
+<h1 id="hexo安装方法"><a href="#hexo安装方法" class="headerlink" title="hexo安装方法"></a><strong>hexo安装方法</strong></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  hexo 依赖于 <span class="string">"Git"</span> 和 <span class="string">"Node.js"</span>所以下面分别开始安装这两个软件 </span><br><span class="line"> --version</span><br><span class="line"></span><br><span class="line"><span class="comment">### **git的安装**</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line"> 命令： $ sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+<p> 查看git是否安装成功<br> 命令： $ git  –version</p>
+<h3 id="node-js的安装"><a href="#node-js的安装" class="headerlink" title="node.js的安装"></a><strong>node.js的安装</strong></h3><p>提供安装方式有两种<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"切记：（重启终端）否则找不到 nvm"</span></span><br><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.<span class="number">28.0</span>/install.sh | bash  </span><br><span class="line">或</span><br><span class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.<span class="number">28.0</span>/install.sh | bash </span><br><span class="line">nvm install <span class="number">0.10</span> (nvm安装)</span><br><span class="line">nvm ls  (查看nvm的版本)</span><br><span class="line">nvm常用的命令</span><br><span class="line">$ nvm use <span class="number">0.10</span>(使用指定的版本)</span><br><span class="line">$ rm -rf ~/.nvm(卸载nvm)</span><br></pre></td></tr></table></figure></p>
+<h3 id="hexo的安装"><a href="#hexo的安装" class="headerlink" title="hexo的安装"></a><strong>hexo的安装</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a><strong>初始化</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog   <span class="string">"指定 "</span>blog<span class="string">"，会在当前目录建立一个名为 "</span>blog<span class="string">" 的文件夹"</span></span><br><span class="line">进入（blog目录下的操作）</span><br><span class="line">npm install hexo --save</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h1 id="目录-1"><a href="#目录-1" class="headerlink" title="目录"></a><strong>目录</strong></h1><ul>
+<li>scaffolds 工具模板</li>
+<li>scripts hexo的功能js:</li>
+<li>source 博客资源文件夹<ul>
+<li>source/_drafts 草稿文件夹</li>
+<li>source/_posts 文章文件夹</li>
+</ul>
+</li>
+<li>themes 存放皮肤的文件夹<ul>
+<li>themes/landscape 默认皮肤文件夹</li>
+</ul>
+</li>
+<li>_config.yml 全局配置文件</li>
+<li><p>db.json json格式的静态常量数据库</p>
+</li>
+<li><p>_posts 目录：Hexo存放博客文章的文件夹</p>
+</li>
+<li>themes  目录：存放皮肤的文件夹，默认使用官方的主题 你也可以从hexo主题页面下载你喜欢的主题</li>
+</ul>
+<h3 id="创建新博客"><a href="#创建新博客" class="headerlink" title="创建新博客"></a><strong>创建新博客</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"helloWorld"</span></span><br><span class="line">会在目录 <span class="string">"~/blog/_poste"</span>下生成<span class="string">"helloWorld.md文件"</span></span><br></pre></td></tr></table></figure>
+<h3 id="现在本地版本的hexo已经配置完成了，可以使用以下命令来生成静态文件"><a href="#现在本地版本的hexo已经配置完成了，可以使用以下命令来生成静态文件" class="headerlink" title="现在本地版本的hexo已经配置完成了，可以使用以下命令来生成静态文件"></a><strong>现在本地版本的hexo已经配置完成了，可以使用以下命令来生成静态文件</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate   或  $ hexo g</span><br><span class="line"></span><br><span class="line">$ hexo server     或  $ hexo s</span><br></pre></td></tr></table></figure>
+<p>然后通过 <a href="http://localhost:4000/" target="_blank" rel="external">http://locahost:4000</a>进行访问，如果页面正常打开，那么恭喜你，你的本地博客已经搭建完成，还差一点点就可以进行发布了。<br><img src="/images/localhost.png" alt="hexo"></p>
+<h1 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a><strong>hexo配置</strong></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* gitCafe注册一个账号，并且<span class="string">"项目名"</span>与<span class="string">"账户名"</span>相同</span><br><span class="line">* <span class="string">"创建一个master分支"</span></span><br><span class="line">* 生成密钥 </span><br><span class="line">* <span class="string">"$ ssh-keygen，并添加到账户中"</span></span><br></pre></td></tr></table></figure>
+<h1 id="hexo部署"><a href="#hexo部署" class="headerlink" title="hexo部署"></a><strong>hexo部署</strong></h1><p>首先编辑你hexo安装目录下的_config.yml文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@gitcafe.com:yedingguang/yedingguang.git</span><br><span class="line">  branch: gitcafe-pages</span><br></pre></td></tr></table></figure>
+<p>重新输入命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line"></span><br><span class="line">$ hexo d （部署到git cafe上）</span><br><span class="line"></span><br><span class="line">如果出现<span class="string">"ERROR Deployer not found:git"</span>错误</span><br><span class="line">$  npm install hexo-deployer-git --save </span><br><span class="line"><span class="string">"要是出现错误就继续输入上面的命令，直到成功为止"</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="git到网站上去"><a href="#git到网站上去" class="headerlink" title="git到网站上去"></a><strong>git到网站上去</strong></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git config --global user.name <span class="string">'*****'</span></span><br><span class="line">$ git config --global user.email <span class="string">'*****'</span></span><br><span class="line">$ git commit -m <span class="string">"提交源文件"</span></span><br><span class="line">$ git remote add  <span class="string">"origin"</span> <span class="string">"git@gitcafe.com:*********"</span></span><br><span class="line">$ git pull <span class="string">"origin"</span> <span class="string">"master"</span> </span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+<h1 id="hexo更换主题"><a href="#hexo更换主题" class="headerlink" title="hexo更换主题"></a><strong>hexo更换主题</strong></h1><p><a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">漂亮的主题地址</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line"><span class="built_in">cd</span> themes/yilia</span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line">* hexo根目录下的 _config.yml ： theme: yilia <span class="string">"设置主题"</span></span><br><span class="line"></span><br><span class="line">* theme/yilia/_cofig.yml ： acatar: 头像.png  <span class="string">"设置大头像"</span></span><br><span class="line"></span><br><span class="line">* theme/yilia/_cofig.yml ： favicon: 头像.png  <span class="string">"设置网页小图标"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/15/hexo的创建/" data-id="ciknorris000355a3ecclzwp0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git的详情" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/15/git的详情/" class="article-date">
+  <time datetime="2016-02-15T06:06:35.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/15/git的详情/">深入了解 git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git简介"><a href="#git简介" class="headerlink" title="git简介"></a><strong>git简介</strong></h2><p>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理，为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持（wingeddevil注：这得分是用什么样的服务端，使用http协议或者git协议等不太一样。并且在push和pull的时候和服务器端还是有交互的。），使源代码的发布和交流极其方便。 Git 的速度很快，这对于诸如 Linux kernel 这样的大项目来说自然很重要。 Git 最为出色的是它的合并跟踪（merge tracing）能力。</p>
+<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a><strong>git安装</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">命令： $ sudo apt-get install git-core  </span><br><span class="line">查看git是否安装成功</span><br><span class="line">命令： $ git  --version</span><br></pre></td></tr></table></figure>
+<h2 id="git图形原理"><a href="#git图形原理" class="headerlink" title="git图形原理"></a><strong>git图形原理</strong></h2><p><img src="/images/git图形原理.png" alt="git图形原理"></p>
+<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a><strong>git常用命令</strong></h2><p>master : 默认开发分支； origin : 默认远程版本库</p>
+<h3 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a><strong>初始化操作</strong></h3><pre><code>$ git config -global user.name &lt;name&gt; #设置提交者名字
+$ git config -global user.email &lt;email&gt; #设置提交者邮箱
+$ git config -list #检查已有的配置信息
+</code></pre><h3 id="创建新版本库和克隆"><a href="#创建新版本库和克隆" class="headerlink" title="创建新版本库和克隆"></a><strong>创建新版本库和克隆</strong></h3><pre><code>创建
+$ git init #初始化本地版本库
+克隆
+$ git clone &lt;url&gt; #克隆远程版本库
+$ git fetch &lt;origin&gt; #克隆远程版本库
+$ git clone &lt;url&gt; -b &lt;branchName&gt; #克隆远程版本库指定的分支
+</code></pre><h3 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a><strong>修改和提交</strong></h3><pre><code>加载（Stage）文件
+$ git add . #添加所有改动过的文件
+$ git add &lt;file&gt; #添加指定的文件
+$ git mv &lt;old&gt; &lt;new&gt; #文件重命名
+$ git rm &lt;file&gt; #删除文件
+$ git rm -cached &lt;file&gt; #停止跟踪文件但不删除    
+提交文件
+$ git commit -m &lt;file&gt; #提交指定文件
+$ git commit -m “commit message” #提交所有更新过的文件
+$ git commit -amend #修改最后一次提交
+</code></pre><h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a><strong>查看提交历史</strong></h3><pre><code>$ git log #查看提交历史
+$ git log -p &lt;file&gt; #查看指定文件的提交历史
+$ git branch -v #每个分支最后的提交
+$ git status #查看当前状态
+$ git diff #查看变更内容，工作区与暂存区
+$ git diff -cached # 查看变更内容，暂存区与本地仓库 
+</code></pre><h3 id="撤消操作"><a href="#撤消操作" class="headerlink" title="撤消操作"></a><strong>撤消操作</strong></h3><pre><code>工作区
+git checkout &lt;file&gt; &lt;file1&gt;  # 还原指定的文件（回滚）
+git checkout . # 还原所有的文件
+暂存区
+git reset HEAD &lt;file&gt;  # 撤销指定的文件
+git reset HEAD . #撤消所有文件
+本地仓库
+$ git reset -hard HEAD #撤消工作目录中所有未提交文件的修改内容
+$ git checkout HEAD &lt;file1&gt; &lt;file2&gt; #撤消指定的未提交文件的修改内容
+$ git checkout HEAD. #撤消所有文件
+</code></pre><h3 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a><strong>分支与标签</strong></h3><pre><code>分支的操作
+$ git branch #显示所有本地分支
+$ git branch &lt;new-branch&gt; #创建新分支
+$ git branch -D &lt;branch&gt; #强行删除本地分支
+$ git checkout &lt;branch&gt; #切换到指定分支
+$ git branch -m &lt;old&gt;&lt;new&gt; #修改分支名&apos;
+
+$ git checkout --track &lt;origin&gt;/&lt;branchName&gt; #跟踪远程分支
+$ git branch --track  &lt;branchName&gt;  &lt;origin&gt;/&lt;branchName&gt; #跟踪远程分支
+
+$ git push origin &lt;branch&gt; #提交远程分支
+$ git push origin --delete &lt;branchName&gt; # 删除一个远程分支
+$ git fetch -p #删除掉没有与远程分支对应的本地分支
+标签的操作
+$ git tag #列出所有本地标签
+$ git tag &lt;tagname&gt; #基于最新提交创建标签（轻量）
+$ git tag -a &lt;tagName&gt; -m &quot;注释&quot; # 提交创建标签（附注）
+$ git tag -d &lt;tagname&gt; #删除标签
+$ git checkout &lt;tagname &gt; #切换标签
+$ git show &lt;tagName&gt; #显示标签信息
+
+$ git push origin v0.1.2 # 将v0.1.2标签提交到git服务器
+$ git push origin –tags # 将本地所有标签一次性提交到git服务器
+$ git push origin --delete tag &lt;tagName&gt; 删除远程标签
+</code></pre><h3 id="合并与衍合"><a href="#合并与衍合" class="headerlink" title="合并与衍合"></a><strong>合并与衍合</strong></h3><pre><code>当前在master分支上
+$ git merge &lt;branch&gt; #合并指定分支到master
+
+$ git rebase &lt;branch&gt; #衍合指定分支到当前分支
+</code></pre><h3 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a><strong>远程操作</strong></h3><pre><code>$ git remote -v #查看远程版本库信息
+$ git remote show &lt;remote&gt; #查看指定远程版本库信息
+$ git remote add &lt;origin&gt; &lt;url&gt; #添加远程版本库
+$ git fetch &lt;orign&gt; #从远程库获取代码
+$ git pull &lt;origin&gt; &lt;branch&gt; #下载代码及快速合并
+$ git push &lt;origin&gt; &lt;branch&gt; #上传代码及快速合并
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/02/15/git的详情/" data-id="ciknorrit000455a3dnll4idk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-公路简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/15/公路简介/" class="article-date">
+  <time datetime="2015-09-15T01:04:30.000Z" itemprop="datePublished">2015-09-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/15/公路简介/">公路简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>备注：所谓“公务”是指“公务员之路”。这是拿md语言写的文档，排版很low，还望见谅。</p>
+<ul>
+<li><a href="#1">背景</a></li>
+<li><a href="#2">目的</a></li>
+<li><a href="#3">运行平台</a></li>
+<li><a href="#4">功能模块</a></li>
+</ul>
+<p></p><h1 id="1"><b>1.背景</b></h1><br>&emsp;&emsp;一直以来都蛮自责的，因为来到这个公司带着两个实习的小同事（彭大爷和叶大爷），既没有给他们争取更多更好的福利，也没有教会他们开发的技巧和能力。加上自己的态度和脾气又不是很好，让他们受了一些委屈，在此向这两位同事表示歉意。<p></p>
+<p>&emsp;&emsp;其实社会也是个大学堂，区别于学校的是环境和教学方式，现在很多学校教的东西与社会脱节，老师的教学水平和教学素养参差不齐，不乏很多学生开始堕落。要么自暴自弃，要么自学成才。鉴于一直以来没有把重心放在小同事身上，并为了能让他很好的学点东西，打算实现一款android应用，指在让对方在实践中学习，在学习中成长。</p>
+<p></p><h1 id="2"><b>2.目的</b></h1><br>&emsp;&emsp;当时想让叶大爷想点子，让他自己去做自己喜欢做的事情。他的点子不错，但是过于简单，市场上到处都是。所以我提供了一个新点子，名为“公路”，指的是“公务员之路”。做这个app的目的主要是基于以下几个方面：<p></p>
+<ul>
+<li>android市场功能齐全，ui美观的公务员软件太少；</li>
+<li>做的比较好的公务员软件基本目的是为了盈利，推广自己的培训班；</li>
+<li>市场上还有的软件嵌入广告和收费功能，如浏览常识，看着看着就要收费（鄙人最鄙视之）；</li>
+<li>强大的市场需求，每年包括国考、各地省考和事业编，考生百万千万级；</li>
+<li>为了给叶大爷练练手，希望能通过这个软件，让自己在开发这块有个质的飞跃；</li>
+</ul>
+<p></p><h1 id="3"><b>3.运行平台</b></h1><br>&emsp;&emsp;当前android各个版本的市场占有率以4.4为主导，所以我们的软件最低兼容4.4，采用Metiral Design进行设计，希望低于4.4版本的同学们见谅。<p></p>
+<ul>
+<li>开发工具：android studio</li>
+<li>设计理念：Metiral Design</li>
+<li>java版本：1.8+</li>
+</ul>
+<p></p><h1 id="4"><b>4. 功能模块</b></h1><br>&emsp;&emsp;我们都知道作为一款考公的人员，需要测试的模块有行测、申论和面试。而行测又分了常识、数量关系、言语理解等模块。申论和面试则与我们的生活热点息息相关。鉴于此，“公路”这款软件的主要功能有：每日一练、练习、阅读和个人中心四个模块。具体包括：<p></p>
+<p></p><h2 id="4.1"><b>4.1 每日一练</b></h2><br>&emsp;&emsp;（挑选具有选择性的试题，提供一种解题思路，让考生以后对该题型游刃有余）<p></p>
+<ul>
+<li>今日</li>
+<li>历史</li>
+</ul>
+<p></p><h2 id="4.2"><b>4.2 模拟练习</b></h2><br>&emsp;&emsp;（提供行测各个模块的练习，不提供申论)<p></p>
+<p></p><h3 id="4.2.1"><b>4.2.1 常识</b></h3><p></p>
+<p></p><h3 id="4.2.2"><b>4.2.2 判断推理</b></h3><p></p>
+<ul>
+<li>类比推理</li>
+<li>图形推理<ul>
+<li>数据类</li>
+<li>位置类</li>
+<li>结构类</li>
+<li>功能信息</li>
+<li>实体信息</li>
+<li>空间重构</li>
+<li>平面重构</li>
+<li>平面拼合</li>
+<li>线条拼合</li>
+<li>样式类</li>
+<li>其他规律</li>
+</ul>
+</li>
+<li>逻辑判断</li>
+<li>定义判断<h3 id="4.2.3"><b>4.2.3 数量关系</b></h3></li>
+<li>计算问题之算式计算</li>
+<li>行程问题</li>
+<li>工程问题</li>
+<li>浓度问题</li>
+<li>利润利率问题</li>
+<li>排列组合问题</li>
+<li>抽屉原理</li>
+<li>概率问题</li>
+<li>容斥原理问题</li>
+<li>统筹问题</li>
+<li>盈亏问题</li>
+<li>和差倍比问题</li>
+<li>几何问题</li>
+<li>费用问题</li>
+<li>计数问题<h3 id="4.2.4"><b>4.2.4 资料分析</b></h3></li>
+<li>统计表材料</li>
+<li>文字材料</li>
+<li>统计图材料</li>
+<li>综合材料<h3 id="4.2.5"><b>4.2.5 言语理解</b></h3></li>
+<li>选词填空</li>
+<li>片段阅读<h2 id="4.3"><b>4.3  资料</b></h2></li>
+<li>行测</li>
+<li>申论</li>
+<li>热点</li>
+<li>文章<h2 id="4.4"><b>4.4  笔记</b></h2></li>
+<li>错题</li>
+<li>收藏</li>
+<li><p>笔记<br>如下图所示：</p>
+<ul>
+<li>功能图<br><img src="/images/gonglu.png" alt="公路功能结构图"></li>
+<li>结构图<br><img src="/images/gl_jiegou.png" alt="公路功能结构图"></li>
+</ul>
+<p></p><h2 id="4.5"><b>4.5  material效果址如下：</b></h2><p></p>
+<h2 id="侧滑"><a href="#侧滑" class="headerlink" title="侧滑"></a>侧滑</h2></li>
+</ul>
+<ul>
+<li><a href="http://itlanbao.com/code/20150917/10000/100537.html" target="_blank" rel="external">http://itlanbao.com/code/20150917/10000/100537.html</a></li>
+<li><a href="http://www.mamicode.com/info-detail-912758.html" target="_blank" rel="external">http://www.mamicode.com/info-detail-912758.html</a></li>
+<li><a href="http://blog.csdn.net/jdsjlzx/article/details/43447713" target="_blank" rel="external">http://blog.csdn.net/jdsjlzx/article/details/43447713</a></li>
+<li><a href="http://www.jianshu.com/p/3fe2acac0ddb" target="_blank" rel="external">http://www.jianshu.com/p/3fe2acac0ddb</a></li>
+<li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0303/2522.html" target="_blank" rel="external">http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0303/2522.html</a></li>
+<li><a href="http://www.mobile-open.com/2014/3511.html" target="_blank" rel="external">http://www.mobile-open.com/2014/3511.html</a></li>
+<li><a href="http://www.jcodecraeer.com/a/opensource/2014/1113/1963.html" target="_blank" rel="external">http://www.jcodecraeer.com/a/opensource/2014/1113/1963.html</a></li>
+<li>s<a href="http://www.aswifter.com/2015/06/27/Material-Design-Example-2/" target="_blank" rel="external">http://www.aswifter.com/2015/06/27/Material-Design-Example-2/</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/09/15/公路简介/" data-id="ciknorriq000255a3kw6s284m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,7 +507,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -133,7 +519,23 @@
       <ul>
         
           <li>
-            <a href="/2016/02/15/hello-world/">Hello World</a>
+            <a href="/2016/02/15/android_studio的搭建/">Linux 搭建android studio</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/15/移动开发平台（分享）/">移动开发者服务平台</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/15/hexo的创建/">hexo搭建博客，并部署到 gitcafe</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/15/git的详情/">深入了解 git</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/15/公路简介/">公路简介</a>
           </li>
         
       </ul>
