@@ -112,11 +112,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-android_studio的搭建" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-支付宝" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/15/android_studio的搭建/" class="article-date">
-  	<time datetime="2016-02-15T10:03:38.000Z" itemprop="datePublished">2016-02-15</time>
+      <a href="/2016/04/22/支付宝/" class="article-date">
+  	<time datetime="2016-04-22T07:24:25.000Z" itemprop="datePublished">2016-04-22</time>
 </a>
     </div>
   
@@ -129,7 +129,71 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/android_studio的搭建/">Linux 搭建android studio</a>
+      <a class="article-title" href="/2016/04/22/支付宝/">支付宝的使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://openhome.alipay.com/platform/home.htm" target="_blank" rel="external">支付宝开发平台</a> —&gt; <a href="">支付能力</a> —&gt; <a href="https://doc.open.alipay.com/doc2/detail?treeId=59&amp;articleId=103563&amp;docType=1" target="_blank" rel="external">移动支付（sdk dome）</a>解压发现里面有三个文件夹，打开其中“移动支付接口SDK2.0标准版(20150121)”文件夹，你将看到“DEMO”文件夹即说明文档，在打开“DEMO”文件夹，会看到“客户端的demo”文件夹，在客户端的demo中又有两个压缩包，分别是Android、IOS使用的，解压Android使用的压缩包，你将看到“alipay_demo”、“alipay-sdk-common”文件夹，这个就是你要用的支付宝接口及demo。</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a><strong>目录结构</strong></h2><p><img src="/images/zhifu.png" alt="hexo"></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title=" 注意事项"></a><strong> 注意事项</strong></h2><ul>
+<li>alipaySdk-20160223.jar 放到你的工程目录中</li>
+<li>其中，Base64.java、PayResult.java、SignUtils.java这三个类不需要动直接放到你的工程目录中</li>
+<li>ExternalFragment.java 和H5PayDemoActivity.java删掉 。</li>
+<li>PayDemoActivity是继承FragmentActivity因此我将PayDemoActivity修改成”payTools”类。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line">单例模式　</span><br><span class="line">private <span class="function"><span class="title">PayTools</span></span>() &#123;</span><br><span class="line">   &#125;</span><br><span class="line">private static PayTools payTools;</span><br><span class="line">public static  PayTools <span class="function"><span class="title">getPayTools</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> PayToolsInstance.payTools;</span><br><span class="line">   &#125;</span><br><span class="line">private static class PayToolsInstance &#123;</span><br><span class="line">   private static PayTools payTools = new PayTools();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">public static final String PARTNER = <span class="string">""</span>;        // 商户PID</span><br><span class="line">public static final String SELLER = <span class="string">""</span>;         // 商户收款账号</span><br><span class="line">public static final String RSA_PRIVATE = <span class="string">""</span>;    // 商户私钥，pkcs8格式</span><br><span class="line">public static final String RSA_PUBLIC = <span class="string">""</span>;     // 支付宝公钥</span><br><span class="line"></span><br><span class="line">private static final int SDK_PAY_FLAG = <span class="number">1</span>;</span><br><span class="line">private Activity activity;</span><br><span class="line"></span><br><span class="line">获取签名方式</span><br><span class="line">@SuppressLint(<span class="string">"HandlerLeak"</span>)</span><br><span class="line">private Handler mHandler = new <span class="function"><span class="title">Handler</span></span>() &#123;</span><br><span class="line">	@SuppressWarnings(<span class="string">"unused"</span>)</span><br><span class="line">　　　　　public void handleMessage(Message msg) &#123;</span><br><span class="line">　　　　　　　switch (msg.what) &#123;</span><br><span class="line">　　　　　　　　　　<span class="keyword">case</span> SDK_PAY_FLAG: &#123;</span><br><span class="line">　　　　　　　　　　　PayResult payResult = new PayResult((String) msg.obj);</span><br><span class="line">　　　　　　　　　　　String resultInfo = payResult.getResult();// 同步返回需要验证的信息</span><br><span class="line">　　　　　　　　　　　String resultStatus = payResult.getResultStatus();</span><br><span class="line">	// 判断resultStatus 为“<span class="number">9000</span>”则代表支付成功，具体状态码代表含义可参考接口文档</span><br><span class="line">	<span class="keyword">if</span> (TextUtils.equals(resultStatus, <span class="string">"9000"</span>)) &#123;</span><br><span class="line">	　　　　Toast.makeText(activity, <span class="string">"支付成功"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">	　　　　&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	　　　　// <span class="string">"8000"</span>代表支付结果因为支付渠道原因或者系统原因还在等待支付结果确认，最终交易是否成功以服务端异步通知为准（小概率状态）</span><br><span class="line">	　　　　<span class="keyword">if</span> (TextUtils.equals(resultStatus, <span class="string">"8000"</span>)) &#123;</span><br><span class="line">	　　　　Toast.makeText(activity, <span class="string">"支付结果确认中"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">　　　　　　　　　　　　&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	　　　　// 其他值就可以判断为支付失败，包括用户主动取消支付，或者系统返回的错误</span><br><span class="line">	　　　　Toast.makeText(activity, <span class="string">"支付失败"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">　　　　　　　　　　　　　　&#125;</span><br><span class="line">	　　　　&#125;</span><br><span class="line">	　　　　　<span class="built_in">break</span>;</span><br><span class="line">　　　　　　　　　　&#125;</span><br><span class="line">　　　　　　　　　　　　　　default:</span><br><span class="line">	　　　　　　　<span class="built_in">break</span>;</span><br><span class="line">	　　　　　　&#125;</span><br><span class="line">	　　　　　&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">支付的方法（<span class="string">"测试的商品"</span>, <span class="string">"该测试商品的详细描述"</span>, <span class="string">"0.01"</span>） String类型</span><br><span class="line">public void pay(String subject, String body, String price)</span><br><span class="line">    &#123;</span><br><span class="line">       String orderInfo = getOrderInfo(subject<span class="string">", body"</span>, price);  // 订单　</span><br><span class="line">       String sign = sign(orderInfo);   　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　// 对订单做RSA 签名</span><br><span class="line">	try &#123;	</span><br><span class="line">	sign = URLEncoder.encode(sign, <span class="string">"UTF-8"</span>);                                     // 仅需对sign 做URL编码</span><br><span class="line">	    &#125; catch (UnsupportedEncodingException e)</span><br><span class="line">　　　　　　　　　　　　　&#123;</span><br><span class="line">	       e.printStackTrace();</span><br><span class="line">	　　　　　　　final String payInfo = orderInfo + <span class="string">"&amp;sign=\""</span> + sign + <span class="string">"\"&amp;"</span> + getSignType();　　　// 完整的符合支付宝参数规范的订单信息</span><br><span class="line">　　　　　　　　　　　　　　　　Runnable payRunnable = new <span class="function"><span class="title">Runnable</span></span>() &#123;</span><br><span class="line">　　　　　　　　　　　　　　　　　　@Override</span><br><span class="line">　　　　　　　　　　　　　　　　　　public void <span class="function"><span class="title">run</span></span>() &#123;</span><br><span class="line">　　　　　　　　　　　　　　　　　// 构造PayTask 对象</span><br><span class="line">	　　　　　　　　　PayTask alipay = new PayTask(activity);</span><br><span class="line">	　　　　　　　　　// 调用支付接口，获取支付结果</span><br><span class="line">	　　　　　　　　String result = alipay.pay(payInfo, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">　　　　　　　　　　　　　　　　Message msg = new Message();</span><br><span class="line">	　　　　　　　　msg.what = SDK_PAY_FLAG;</span><br><span class="line">	　　　　　　　　msg.obj = result;</span><br><span class="line">	　　　　　　　　mHandler.sendMessage(msg);</span><br><span class="line">	　　　　　　　　　　&#125;</span><br><span class="line">　　　　　　　　　　　　　　　&#125;;</span><br><span class="line">　　　　　　　　　　　　　　　　// 必须异步调用</span><br><span class="line">　　　　　　　　　　　　　　　Thread payThread = new Thread(payRunnable);</span><br><span class="line">　　　　　　　　　　　　　　　payThread.start();</span><br><span class="line">	 　　&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">创建订单信息</span><br><span class="line">private String getOrderInfo(String subject, String body, String price) &#123;</span><br><span class="line"></span><br><span class="line">      String orderInfo = <span class="string">"partner="</span> + <span class="string">"\""</span> + PARTNER + <span class="string">"\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;seller_id="</span> + <span class="string">"\""</span> + SELLER + <span class="string">"\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;out_trade_no="</span> + <span class="string">"\""</span> + getOutTradeNo() + <span class="string">"\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;subject="</span> + <span class="string">"\""</span> + subject + <span class="string">"\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;body="</span> + <span class="string">"\""</span> + body + <span class="string">"\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;total_fee="</span> + <span class="string">"\""</span> + price + <span class="string">"\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;notify_url="</span> + <span class="string">"\""</span> + <span class="string">"http://notify.msp.hk/notify.htm"</span> + <span class="string">"\""</span>;    //后台会给一个回调的url</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;service=\"mobile.securitypay.pay\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;payment_type=\"1\""</span>;</span><br><span class="line"></span><br><span class="line">      orderInfo += <span class="string">"&amp;_input_charset=\"utf-8\""</span>;</span><br><span class="line"></span><br><span class="line">	// 设置未付款交易的超时时间</span><br><span class="line">	// 默认<span class="number">30</span>分钟，一旦超时，该笔交易就会自动被关闭。</span><br><span class="line">	// 取值范围：<span class="number">1</span>m～<span class="number">15</span>d。</span><br><span class="line">	// m-分钟，h-小时，d-天，<span class="number">1</span>c-当天（无论交易何时创建，都在<span class="number">0</span>点关闭）。</span><br><span class="line">	// 该参数数值不接受小数点，如<span class="number">1.5</span>h，可转换为<span class="number">90</span>m。</span><br><span class="line">	orderInfo += <span class="string">"&amp;it_b_pay=\"30m\""</span>;</span><br><span class="line"></span><br><span class="line">	// extern_token为经过快登授权获取到的alipay_open_id,带上此参数用户将使用授权的账户进行支付</span><br><span class="line">	// orderInfo += <span class="string">"&amp;extern_token="</span> + <span class="string">"\""</span> + extern_token + <span class="string">"\""</span>;</span><br><span class="line"></span><br><span class="line">	// 支付宝处理完请求后，当前页面跳转到商户指定页面的路径，可空</span><br><span class="line">	orderInfo += <span class="string">"&amp;return_url=\"m.alipay.com\""</span>;</span><br><span class="line"></span><br><span class="line">	// 调用银行卡支付，需配置此参数，参与签名， 固定值 （需要签约《无线银行卡快捷支付》才能使用）</span><br><span class="line">	// orderInfo += <span class="string">"&amp;paymethod=\"expressGateway\""</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">return</span> orderInfo;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">生成商户订单号，该值在商户端应保持唯一（可自定义格式规范）</span><br><span class="line">private String <span class="function"><span class="title">getOutTradeNo</span></span>() &#123;</span><br><span class="line">	SimpleDateFormat format = new SimpleDateFormat(<span class="string">"MMddHHmmss"</span>, Locale.getDefault());</span><br><span class="line">	Date date = new Date();</span><br><span class="line">	String key = format.format(date);</span><br><span class="line"></span><br><span class="line">	Random r = new Random();</span><br><span class="line">	key = key + r.nextInt();</span><br><span class="line">	key = key.substring(<span class="number">0</span>, <span class="number">15</span>);</span><br><span class="line">	<span class="built_in">return</span> key;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">对订单信息进行签名</span><br><span class="line">private String sign(String content) &#123;</span><br><span class="line">       <span class="built_in">return</span> SignUtils.sign(content, RSA_PRIVATE);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">获取签名方式</span><br><span class="line">private String <span class="function"><span class="title">getSignType</span></span>() &#123;</span><br><span class="line">       <span class="built_in">return</span> <span class="string">"sign_type=\"RSA\""</span>;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="AndroidManifest-xml文件里面添加声明："><a href="#AndroidManifest-xml文件里面添加声明：" class="headerlink" title="AndroidManifest.xml文件里面添加声明："></a><strong>AndroidManifest.xml文件里面添加声明：</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">     android:name=<span class="string">"com.alipay.sdk.app.H5PayActivity"</span></span><br><span class="line">     android:configChanges=<span class="string">"orientation|keyboardHidden|navigation"</span></span><br><span class="line">     android:exported=<span class="string">"false"</span></span><br><span class="line">     android:screenOrientation=<span class="string">"behind"</span> &gt;</span><br><span class="line">&lt;/activity&gt;</span><br><span class="line">&lt;activity</span><br><span class="line">     android:name=<span class="string">"com.alipay.sdk.auth.AuthActivity"</span></span><br><span class="line">     android:configChanges=<span class="string">"orientation|keyboardHidden|navigation"</span></span><br><span class="line">     android:exported=<span class="string">"false"</span></span><br><span class="line">     android:screenOrientation=<span class="string">"behind"</span> &gt;</span><br><span class="line">&lt;/activity&gt;</span><br><span class="line">权限</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.INTERNET"</span> /&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_WIFI_STATE"</span> /&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_PHONE_STATE"</span> /&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span>/&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.ACCESS_COARSE_LOCATION"</span></span><br></pre></td></tr></table></figure>
+<h2 id="添加混淆规则-proguard-project-txt里添加以下相关规则："><a href="#添加混淆规则-proguard-project-txt里添加以下相关规则：" class="headerlink" title="添加混淆规则　proguard-project.txt里添加以下相关规则："></a><strong>添加混淆规则　proguard-project.txt里添加以下相关规则：</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">　　-libraryjars libs/alipaysdk.jar</span><br><span class="line">　　-libraryjars libs/alipaysecsdk.jar</span><br><span class="line">　　-libraryjars libs/alipayutdid.jar</span><br><span class="line"> 　-keep class com.alipay.android.app.IAlixPay&#123;*;&#125;</span><br><span class="line">　　-keep class com.alipay.android.app.IAlixPay<span class="variable">$Stub</span>&#123;*;&#125;</span><br><span class="line">　　-keep class com.alipay.android.app.IRemoteServiceCallback&#123;*;&#125;</span><br><span class="line">　　-keep class com.alipay.android.app.IRemoteServiceCallback<span class="variable">$Stub</span>&#123;*;&#125;</span><br><span class="line"> 　-keep class com.alipay.sdk.app.PayTask&#123; public *;&#125;</span><br><span class="line"> 　-keep class com.alipay.sdk.app.AuthTask&#123; public *;&#125;</span><br><span class="line"> 　-keep class com.alipay.mobilesecuritysdk.*</span><br><span class="line"> 　-keep class com.ut.*</span><br></pre></td></tr></table></figure>
+<p>　　</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android_studio的搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/18/android_studio的搭建/" class="article-date">
+  	<time datetime="2016-04-18T02:43:48.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/18/android_studio的搭建/">Linux 搭建android studio</a>
     </h1>
   
 
@@ -182,8 +246,8 @@
     <article id="post-移动开发平台（分享）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/15/移动开发平台（分享）/" class="article-date">
-  	<time datetime="2016-02-15T06:06:35.000Z" itemprop="datePublished">2016-02-15</time>
+      <a href="/2016/04/18/移动开发平台（分享）/" class="article-date">
+  	<time datetime="2016-04-18T02:43:48.000Z" itemprop="datePublished">2016-04-18</time>
 </a>
     </div>
   
@@ -196,7 +260,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/移动开发平台（分享）/">移动开发者服务平台</a>
+      <a class="article-title" href="/2016/04/18/移动开发平台（分享）/">移动开发者服务平台</a>
     </h1>
   
 
@@ -257,8 +321,8 @@
     <article id="post-hexo的创建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/15/hexo的创建/" class="article-date">
-  	<time datetime="2016-02-15T06:06:35.000Z" itemprop="datePublished">2016-02-15</time>
+      <a href="/2016/04/18/hexo的创建/" class="article-date">
+  	<time datetime="2016-04-18T02:43:48.000Z" itemprop="datePublished">2016-04-18</time>
 </a>
     </div>
   
@@ -271,7 +335,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/hexo的创建/">hexo搭建博客，并部署到 gitcafe</a>
+      <a class="article-title" href="/2016/04/18/hexo的创建/">hexo搭建博客，并部署到 gitcafe</a>
     </h1>
   
 
@@ -351,8 +415,8 @@
     <article id="post-git的详情" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/15/git的详情/" class="article-date">
-  	<time datetime="2016-02-15T06:06:35.000Z" itemprop="datePublished">2016-02-15</time>
+      <a href="/2016/04/18/git的详情/" class="article-date">
+  	<time datetime="2016-04-18T02:43:48.000Z" itemprop="datePublished">2016-04-18</time>
 </a>
     </div>
   
@@ -365,7 +429,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/15/git的详情/">深入了解 git</a>
+      <a class="article-title" href="/2016/04/18/git的详情/">深入了解 git</a>
     </h1>
   
 
