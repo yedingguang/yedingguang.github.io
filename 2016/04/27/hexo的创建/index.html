@@ -16,7 +16,7 @@ hexo更换主题
 hexo简介Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架。hexo相比其他的静态网页生成器而言，生成静态网页最快，插件丰富等优点（已经移植了大量Octopress插件）。hexo同其他很多轻量级博客如jekyll、octopress、jekyllbootstrap等一样，也是使用Mark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建博客，并部署到 gitcafe">
-<meta property="og:url" content="http://yoursite.com/2016/04/18/hexo的创建/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/hexo的创建/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="目录
 hexo简介
@@ -27,7 +27,7 @@ hexo更换主题
 
 hexo简介Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架。hexo相比其他的静态网页生成器而言，生成静态网页最快，插件丰富等优点（已经移植了大量Octopress插件）。hexo同其他很多轻量级博客如jekyll、octopress、jekyllbootstrap等一样，也是使用Mark">
 <meta property="og:image" content="http://yoursite.com/images/localhost.png">
-<meta property="og:updated_time" content="2016-02-15T05:53:23.000Z">
+<meta property="og:updated_time" content="2016-04-26T09:25:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客，并部署到 gitcafe">
 <meta name="twitter:description" content="目录
@@ -136,8 +136,8 @@ hexo简介Hexo 是一个简单地、轻量地、基于Node的一个静态博客�
       <div class="body-wrap"><article id="post-hexo的创建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/18/hexo的创建/" class="article-date">
-  	<time datetime="2016-04-18T02:43:48.000Z" itemprop="datePublished">2016-04-18</time>
+      <a href="/2016/04/27/hexo的创建/" class="article-date">
+  	<time datetime="2016-04-27T10:32:11.000Z" itemprop="datePublished">2016-04-27</time>
 </a>
     </div>
   
@@ -174,7 +174,7 @@ hexo简介Hexo 是一个简单地、轻量地、基于Node的一个静态博客�
 <li>hexo更换主题</li>
 </ul>
 <h1 id="hexo简介"><a href="#hexo简介" class="headerlink" title="hexo简介"></a><strong>hexo简介</strong></h1><p>Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架。<br>hexo相比其他的静态网页生成器而言，生成静态网页最快，插件丰富等优点（已经移植了大量Octopress插件）。hexo同其他很多轻量级博客如jekyll、octopress、jekyllbootstrap等一样，也是使用Markdown语法进行编辑博文。关于Markdown不用怕，推荐搜索维基上面的语法示例，有中文版本<a href="http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">http://zh.wikipedia.org/wiki/Markdown</a><br>Hexo的官方网站：<a href="http://hexo.io" target="_blank" rel="external">http://hexo.io/</a></p>
-<h1 id="hexo安装方法"><a href="#hexo安装方法" class="headerlink" title="hexo安装方法"></a><strong>hexo安装方法</strong></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  hexo 依赖于 <span class="string">"Git"</span> 和 <span class="string">"Node.js"</span>所以下面分别开始安装这两个软件 </span><br><span class="line"> --version</span><br><span class="line"></span><br><span class="line"><span class="comment">### **git的安装**</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line"> 命令： $ sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+<h3 id="git的安装"><a href="#git的安装" class="headerlink" title="git的安装"></a><strong>git的安装</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令： $ sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
 <p> 查看git是否安装成功<br> 命令： $ git  –version</p>
 <h3 id="node-js的安装"><a href="#node-js的安装" class="headerlink" title="node.js的安装"></a><strong>node.js的安装</strong></h3><p>提供安装方式有两种<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"切记：（重启终端）否则找不到 nvm"</span></span><br><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.<span class="number">28.0</span>/install.sh | bash  </span><br><span class="line">或</span><br><span class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.<span class="number">28.0</span>/install.sh | bash </span><br><span class="line">nvm install <span class="number">0.10</span> (nvm安装)</span><br><span class="line">nvm ls  (查看nvm的版本)</span><br><span class="line">nvm常用的命令</span><br><span class="line">$ nvm use <span class="number">0.10</span>(使用指定的版本)</span><br><span class="line">$ rm -rf ~/.nvm(卸载nvm)</span><br></pre></td></tr></table></figure></p>
 <h3 id="hexo的安装"><a href="#hexo的安装" class="headerlink" title="hexo的安装"></a><strong>hexo的安装</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
@@ -217,17 +217,17 @@ hexo简介Hexo 是一个简单地、轻量地、基于Node的一个静态博客�
     
 <nav id="article-nav">
   
-    <a href="/2016/04/18/移动开发平台（分享）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/27/支付宝/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          移动开发者服务平台
+          支付宝的使用
         
       </div>
     </a>
   
   
-    <a href="/2016/04/18/git的详情/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/04/27/git的详情/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">深入了解 git</div>
       <strong class="article-nav-caption">></strong>
     </a>
